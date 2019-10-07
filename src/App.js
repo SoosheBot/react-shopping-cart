@@ -24,21 +24,8 @@ function App() {
 
 			<ProductContext.Provider value={{ products, addItem }}>
 				{/* Routes */}
-				<Route
-					exact
-					path="/"
-					render={() => (
-						<Products
-							products={products}
-							addItem={addItem}
-						/>
-					)}
-				/>
-
-				<Route
-					path="/cart"
-					render={() => <ShoppingCart cart={cart} />}
-				/>
+				<Route exact path="/" component={Products} />
+				<Route path="/cart" component={ShoppingCart} />
 			</ProductContext.Provider>
 		</div>
 	);
